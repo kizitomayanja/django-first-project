@@ -1,45 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post List</title>
-    <style>
-        h1{
-            color: royalblue;
-            align-items: center;
-        }
-        h2{
-            color: lime;
-            align-items: center;
-        }
-    </style>
-</head>
-<body>
-    <header>
-       <h2> My Blog Post</h2>
-    </header>
-   
-       
-       {%for post in posts%}
- <article>
-<time>Created: {{post.created_date}}</time>
-<h1><u>
-        {{post.title}} <br></u></h2>
+{% extends 'blog/base.html' %}
+{% block content %}
 
-<p> {{post.text}}</p>
- </article>
-        {%endfor%}
 
- <!--        
-        <h2>My First post</h2>
-        
-   
-   <article>
-        <time> Published: 14.06.2014, 12:14</time>
-        <h2>My Second Post</h2>
-        <p> Lorem ipsum and some more stuff I've never bothered to cram</p>
-    </article>-->
-</body>
-
-</html>
+{% for post in posts %}
+                    <article class="post">
+                        <time class="date">
+                            {{ post.published_date }}
+                        </time>
+                        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                        <p>{{ post.text|linebreaksbr }}</p>
+                    </article>
+{% endfor %}
+                
+{% endblock %}
