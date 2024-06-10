@@ -10,16 +10,16 @@
 .page-header h1 a,
 .page-header h1 a:visited,
 .page-header h1 a:active {
-    transition-duration: 0.5s;
+    transition-duration: 0.3s;
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
 }
 
 .page-header h1 a:hover{
-    color: orange;
+    color: rgb(5, 247, 57);
     font-size: 40pt;
-    transition-duration: 0.5s;
+    transition-duration: 0.3s;
 }
 
 h1,
@@ -57,13 +57,15 @@ h4 {
 
 .post h2 a,
 .post h2 a:visited {
-    transition: 0.5s;
+    transition: 0.3s;
     color: #000000;
+    font-size: 26pt;
 }
 
 .post h2 a:hover {
-    transition: 0.5s;
-    color: rgb(6, 245, 105);
+    transition: 0.3s;
+    color: rgb(6, 110, 245);
+    font-size: 30pt;
 }
 
 .post > .date,
